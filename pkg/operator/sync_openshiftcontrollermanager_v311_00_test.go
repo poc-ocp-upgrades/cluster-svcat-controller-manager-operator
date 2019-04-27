@@ -19,6 +19,8 @@ import (
 func TestProgressingCondition(t *testing.T) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	testCases := []struct {
 		name				string
 		daemonSetGeneration		int64

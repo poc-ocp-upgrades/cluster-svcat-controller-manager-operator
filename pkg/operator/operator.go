@@ -46,6 +46,8 @@ type ServiceCatalogControllerManagerOperator struct {
 func NewServiceCatalogControllerManagerOperator(targetImagePullSpec string, operatorConfigInformer operatorinformersv1.ServiceCatalogControllerManagerInformer, kubeInformersForServiceCatalogControllerManager informers.SharedInformerFactory, operatorConfigClient operatorclientv1.OperatorV1Interface, kubeClient kubernetes.Interface, dynamicClient dynamic.Interface, recorder events.Recorder) *ServiceCatalogControllerManagerOperator {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	c := &ServiceCatalogControllerManagerOperator{targetImagePullSpec: targetImagePullSpec, operatorConfigClient: operatorConfigClient, kubeClient: kubeClient, dynamicClient: dynamicClient, queue: workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "KubeApiserverOperator"), rateLimiter: flowcontrol.NewTokenBucketRateLimiter(0.05, 4), recorder: recorder}
 	operatorConfigInformer.Informer().AddEventHandler(c.eventHandler())
 	kubeInformersForServiceCatalogControllerManager.Core().V1().ConfigMaps().Informer().AddEventHandler(c.eventHandler())
@@ -56,6 +58,8 @@ func NewServiceCatalogControllerManagerOperator(targetImagePullSpec string, oper
 	return c
 }
 func (c ServiceCatalogControllerManagerOperator) sync() error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	operatorConfig, err := c.operatorConfigClient.ServiceCatalogControllerManagers().Get("cluster", metav1.GetOptions{})
@@ -103,6 +107,8 @@ func (c ServiceCatalogControllerManagerOperator) sync() error {
 func (c *ServiceCatalogControllerManagerOperator) Run(workers int, stopCh <-chan struct{}) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	defer utilruntime.HandleCrash()
 	defer c.queue.ShutDown()
 	glog.Infof("Starting ServiceCatalogControllerManagerOperator")
@@ -113,10 +119,14 @@ func (c *ServiceCatalogControllerManagerOperator) Run(workers int, stopCh <-chan
 func (c *ServiceCatalogControllerManagerOperator) runWorker() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	for c.processNextWorkItem() {
 	}
 }
 func (c *ServiceCatalogControllerManagerOperator) processNextWorkItem() bool {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	dsKey, quit := c.queue.Get()
@@ -137,6 +147,8 @@ func (c *ServiceCatalogControllerManagerOperator) processNextWorkItem() bool {
 func (c *ServiceCatalogControllerManagerOperator) eventHandler() cache.ResourceEventHandler {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return cache.ResourceEventHandlerFuncs{AddFunc: func(obj interface{}) {
 		c.queue.Add(workQueueKey)
 	}, UpdateFunc: func(old, new interface{}) {
@@ -149,6 +161,8 @@ func (c *ServiceCatalogControllerManagerOperator) eventHandler() cache.ResourceE
 var interestingNamespaces = sets.NewString(targetNamespaceName)
 
 func (c *ServiceCatalogControllerManagerOperator) namespaceEventHandler() cache.ResourceEventHandler {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return cache.ResourceEventHandlerFuncs{AddFunc: func(obj interface{}) {

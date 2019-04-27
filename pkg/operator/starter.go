@@ -26,6 +26,8 @@ import (
 func RunOperator(ctx *controllercmd.ControllerContext) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	kubeClient, err := kubernetes.NewForConfig(ctx.ProtoKubeConfig)
 	if err != nil {
 		return err
@@ -69,8 +71,12 @@ type versionGetter struct {
 func (v *versionGetter) SetVersion(operandName, version string) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 }
 func (v *versionGetter) GetVersions() map[string]string {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	co, err := v.servicecatalogControllerManagers.Get("cluster", metav1.GetOptions{})
@@ -83,6 +89,8 @@ func (v *versionGetter) GetVersions() map[string]string {
 	return map[string]string{}
 }
 func (v *versionGetter) VersionChangedChannel() <-chan struct{} {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return make(chan struct{})

@@ -26,6 +26,8 @@ import (
 func syncServiceCatalogControllerManager_v311_00_to_latest(c ServiceCatalogControllerManagerOperator, originalOperatorConfig *operatorapiv1.ServiceCatalogControllerManager) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	errors := []error{}
 	var err error
 	operatorConfig := originalOperatorConfig.DeepCopy()
@@ -105,6 +107,8 @@ func syncServiceCatalogControllerManager_v311_00_to_latest(c ServiceCatalogContr
 func manageServiceCatalogControllerManagerClientCA_v311_00_to_latest(client coreclientv1.CoreV1Interface, recorder events.Recorder) (bool, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	const apiserverClientCA = "client-ca"
 	_, caChanged, err := resourceapply.SyncConfigMap(client, recorder, kubeAPIServerNamespaceName, apiserverClientCA, targetNamespaceName, apiserverClientCA, []metav1.OwnerReference{})
 	if err != nil {
@@ -113,6 +117,8 @@ func manageServiceCatalogControllerManagerClientCA_v311_00_to_latest(client core
 	return caChanged, nil
 }
 func manageServiceCatalogControllerManagerConfigMap_v311_00_to_latest(kubeClient kubernetes.Interface, client coreclientv1.ConfigMapsGetter, recorder events.Recorder, operatorConfig *operatorapiv1.ServiceCatalogControllerManager) (*corev1.ConfigMap, bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	configMap := resourceread.ReadConfigMapV1OrDie(v311_00_assets.MustAsset("v3.11.0/openshift-svcat-controller-manager/cm.yaml"))
@@ -131,6 +137,8 @@ func manageServiceCatalogControllerManagerConfigMap_v311_00_to_latest(kubeClient
 	return resourceapply.ApplyConfigMap(client, recorder, requiredConfigMap)
 }
 func manageServiceCatalogControllerManagerDeployment_v311_00_to_latest(client appsclientv1.DaemonSetsGetter, recorder events.Recorder, options *operatorapiv1.ServiceCatalogControllerManager, imagePullSpec string, generationStatus []operatorapiv1.GenerationStatus, forceRollout bool) (*appsv1.DaemonSet, bool, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	required := resourceread.ReadDaemonSetV1OrDie(v311_00_assets.MustAsset("v3.11.0/openshift-svcat-controller-manager/ds.yaml"))

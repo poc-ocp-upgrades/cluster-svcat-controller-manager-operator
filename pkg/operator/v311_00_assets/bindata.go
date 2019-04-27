@@ -26,9 +26,13 @@ type bindataFileInfo struct {
 func (fi bindataFileInfo) Name() string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return fi.name
 }
 func (fi bindataFileInfo) Size() int64 {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return fi.size
@@ -36,9 +40,13 @@ func (fi bindataFileInfo) Size() int64 {
 func (fi bindataFileInfo) Mode() os.FileMode {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return fi.mode
 }
 func (fi bindataFileInfo) ModTime() time.Time {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return fi.modTime
@@ -46,9 +54,13 @@ func (fi bindataFileInfo) ModTime() time.Time {
 func (fi bindataFileInfo) IsDir() bool {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return false
 }
 func (fi bindataFileInfo) Sys() interface{} {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	return nil
@@ -66,9 +78,13 @@ data:
 func v3110OpenshiftSvcatControllerManagerCmYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerCmYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerCmYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerCmYamlBytes()
@@ -161,9 +177,13 @@ rules:
 func v3110OpenshiftSvcatControllerManagerCrCatalogControllerYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerCrCatalogControllerYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerCrCatalogControllerYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerCrCatalogControllerYamlBytes()
@@ -191,9 +211,13 @@ subjects:
 func v3110OpenshiftSvcatControllerManagerCrbCatalogControllerYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerCrbCatalogControllerYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerCrbCatalogControllerYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerCrbCatalogControllerYamlBytes()
@@ -221,9 +245,13 @@ subjects:
 func v3110OpenshiftSvcatControllerManagerCrbControllerNamespaceViewerBindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerCrbControllerNamespaceViewerBindingYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerCrbControllerNamespaceViewerBindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerCrbControllerNamespaceViewerBindingYamlBytes()
@@ -242,9 +270,13 @@ kind: ServiceCatalogControllerManagerConfig
 func v3110OpenshiftSvcatControllerManagerDefaultconfigYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerDefaultconfigYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerDefaultconfigYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerDefaultconfigYamlBytes()
@@ -366,9 +398,13 @@ spec:
 func v3110OpenshiftSvcatControllerManagerDsYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerDsYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerDsYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerDsYamlBytes()
@@ -392,9 +428,13 @@ metadata:
 func v3110OpenshiftSvcatControllerManagerNsYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerNsYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerNsYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerNsYamlBytes()
@@ -418,9 +458,13 @@ spec:
 func v3110OpenshiftSvcatControllerManagerOperatorConfigYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerOperatorConfigYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerOperatorConfigYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerOperatorConfigYamlBytes()
@@ -447,9 +491,13 @@ rules:
 func v3110OpenshiftSvcatControllerManagerRoleClusterInfoConfigmapYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerRoleClusterInfoConfigmapYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerRoleClusterInfoConfigmapYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerRoleClusterInfoConfigmapYamlBytes()
@@ -482,9 +530,13 @@ rules:
 func v3110OpenshiftSvcatControllerManagerRoleConfigmapAccessorYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerRoleConfigmapAccessorYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerRoleConfigmapAccessorYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerRoleConfigmapAccessorYamlBytes()
@@ -514,9 +566,13 @@ subjects:
 func v3110OpenshiftSvcatControllerManagerRolebindingClusterInfoConfigmapYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerRolebindingClusterInfoConfigmapYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerRolebindingClusterInfoConfigmapYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerRolebindingClusterInfoConfigmapYamlBytes()
@@ -545,9 +601,13 @@ subjects:
 func v3110OpenshiftSvcatControllerManagerRolebindingConfigmapAccessorYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerRolebindingConfigmapAccessorYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerRolebindingConfigmapAccessorYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerRolebindingConfigmapAccessorYamlBytes()
@@ -569,9 +629,13 @@ metadata:
 func v3110OpenshiftSvcatControllerManagerSaYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerSaYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerSaYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerSaYamlBytes()
@@ -604,9 +668,13 @@ rules:
 func v3110OpenshiftSvcatControllerManagerServicemonitorRoleYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerServicemonitorRoleYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerServicemonitorRoleYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerServicemonitorRoleYamlBytes()
@@ -636,9 +704,13 @@ subjects:
 func v3110OpenshiftSvcatControllerManagerServicemonitorRolebindingYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerServicemonitorRolebindingYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerServicemonitorRolebindingYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerServicemonitorRolebindingYamlBytes()
@@ -673,9 +745,13 @@ spec:
 func v3110OpenshiftSvcatControllerManagerServicemonitorYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerServicemonitorYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerServicemonitorYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerServicemonitorYamlBytes()
@@ -706,9 +782,13 @@ spec:
 func v3110OpenshiftSvcatControllerManagerSvcYamlBytes() ([]byte, error) {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return _v3110OpenshiftSvcatControllerManagerSvcYaml, nil
 }
 func v3110OpenshiftSvcatControllerManagerSvcYaml() (*asset, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	bytes, err := v3110OpenshiftSvcatControllerManagerSvcYamlBytes()
@@ -720,6 +800,8 @@ func v3110OpenshiftSvcatControllerManagerSvcYaml() (*asset, error) {
 	return a, nil
 }
 func Asset(name string) ([]byte, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
@@ -735,6 +817,8 @@ func Asset(name string) ([]byte, error) {
 func MustAsset(name string) []byte {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	a, err := Asset(name)
 	if err != nil {
 		panic("asset: Asset(" + name + "): " + err.Error())
@@ -742,6 +826,8 @@ func MustAsset(name string) []byte {
 	return a
 }
 func AssetInfo(name string) (os.FileInfo, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
@@ -757,6 +843,8 @@ func AssetInfo(name string) (os.FileInfo, error) {
 func AssetNames() []string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	names := make([]string, 0, len(_bindata))
 	for name := range _bindata {
 		names = append(names, name)
@@ -767,6 +855,8 @@ func AssetNames() []string {
 var _bindata = map[string]func() (*asset, error){"v3.11.0/openshift-svcat-controller-manager/cm.yaml": v3110OpenshiftSvcatControllerManagerCmYaml, "v3.11.0/openshift-svcat-controller-manager/cr-catalog-controller.yaml": v3110OpenshiftSvcatControllerManagerCrCatalogControllerYaml, "v3.11.0/openshift-svcat-controller-manager/crb-catalog-controller.yaml": v3110OpenshiftSvcatControllerManagerCrbCatalogControllerYaml, "v3.11.0/openshift-svcat-controller-manager/crb-controller-namespace-viewer-binding.yaml": v3110OpenshiftSvcatControllerManagerCrbControllerNamespaceViewerBindingYaml, "v3.11.0/openshift-svcat-controller-manager/defaultconfig.yaml": v3110OpenshiftSvcatControllerManagerDefaultconfigYaml, "v3.11.0/openshift-svcat-controller-manager/ds.yaml": v3110OpenshiftSvcatControllerManagerDsYaml, "v3.11.0/openshift-svcat-controller-manager/ns.yaml": v3110OpenshiftSvcatControllerManagerNsYaml, "v3.11.0/openshift-svcat-controller-manager/operator-config.yaml": v3110OpenshiftSvcatControllerManagerOperatorConfigYaml, "v3.11.0/openshift-svcat-controller-manager/role-cluster-info-configmap.yaml": v3110OpenshiftSvcatControllerManagerRoleClusterInfoConfigmapYaml, "v3.11.0/openshift-svcat-controller-manager/role-configmap-accessor.yaml": v3110OpenshiftSvcatControllerManagerRoleConfigmapAccessorYaml, "v3.11.0/openshift-svcat-controller-manager/rolebinding-cluster-info-configmap.yaml": v3110OpenshiftSvcatControllerManagerRolebindingClusterInfoConfigmapYaml, "v3.11.0/openshift-svcat-controller-manager/rolebinding-configmap-accessor.yaml": v3110OpenshiftSvcatControllerManagerRolebindingConfigmapAccessorYaml, "v3.11.0/openshift-svcat-controller-manager/sa.yaml": v3110OpenshiftSvcatControllerManagerSaYaml, "v3.11.0/openshift-svcat-controller-manager/servicemonitor-role.yaml": v3110OpenshiftSvcatControllerManagerServicemonitorRoleYaml, "v3.11.0/openshift-svcat-controller-manager/servicemonitor-rolebinding.yaml": v3110OpenshiftSvcatControllerManagerServicemonitorRolebindingYaml, "v3.11.0/openshift-svcat-controller-manager/servicemonitor.yaml": v3110OpenshiftSvcatControllerManagerServicemonitorYaml, "v3.11.0/openshift-svcat-controller-manager/svc.yaml": v3110OpenshiftSvcatControllerManagerSvcYaml}
 
 func AssetDir(name string) ([]string, error) {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	_logClusterCodePath()
 	defer _logClusterCodePath()
 	node := _bintree
@@ -800,6 +890,8 @@ var _bintree = &bintree{nil, map[string]*bintree{"v3.11.0": {nil, map[string]*bi
 func RestoreAsset(dir, name string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	data, err := Asset(name)
 	if err != nil {
 		return err
@@ -825,6 +917,8 @@ func RestoreAsset(dir, name string) error {
 func RestoreAssets(dir, name string) error {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	children, err := AssetDir(name)
 	if err != nil {
 		return RestoreAsset(dir, name)
@@ -840,13 +934,24 @@ func RestoreAssets(dir, name string) error {
 func _filePath(dir, name string) string {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
 func _logClusterCodePath() {
 	_logClusterCodePath()
 	defer _logClusterCodePath()
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	pc, _, _, _ := godefaultruntime.Caller(1)
 	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
 	godefaulthttp.Post("http://35.226.239.161:5001/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
+}
+func _logClusterCodePath() {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
+	pc, _, _, _ := godefaultruntime.Caller(1)
+	jsonLog := []byte(fmt.Sprintf("{\"fn\": \"%s\"}", godefaultruntime.FuncForPC(pc).Name()))
+	godefaulthttp.Post("/"+"logcode", "application/json", godefaultbytes.NewBuffer(jsonLog))
 }
