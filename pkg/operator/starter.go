@@ -4,16 +4,13 @@ import (
 	"fmt"
 	"os"
 	"time"
-
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/dynamic"
 	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
-
 	configv1 "github.com/openshift/api/config/v1"
 	operatorv1 "github.com/openshift/api/operator/v1"
-
 	configclient "github.com/openshift/client-go/config/clientset/versioned"
 	configinformers "github.com/openshift/client-go/config/informers/externalversions"
 	operatorclient "github.com/openshift/client-go/operator/clientset/versioned"
@@ -22,12 +19,13 @@ import (
 	"github.com/openshift/library-go/pkg/controller/controllercmd"
 	"github.com/openshift/library-go/pkg/operator/status"
 	"github.com/openshift/library-go/pkg/operator/v1helpers"
-
 	"github.com/openshift/cluster-svcat-controller-manager-operator/pkg/operator/v311_00_assets"
 	"github.com/openshift/cluster-svcat-controller-manager-operator/pkg/util"
 )
 
 func RunOperator(ctx *controllercmd.ControllerContext) error {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	kubeClient, err := kubernetes.NewForConfig(ctx.ProtoKubeConfig)
 	if err != nil {
 		return err
@@ -36,7 +34,6 @@ func RunOperator(ctx *controllercmd.ControllerContext) error {
 	if err != nil {
 		return err
 	}
-
 	configClient, err := configclient.NewForConfig(ctx.KubeConfig)
 	if err != nil {
 		return err
@@ -45,73 +42,37 @@ func RunOperator(ctx *controllercmd.ControllerContext) error {
 	if err != nil {
 		return err
 	}
-
-	v1helpers.EnsureOperatorConfigExists(
-		dynamicClient,
-		v311_00_assets.MustAsset("v3.11.0/openshift-svcat-controller-manager/operator-config.yaml"),
-		schema.GroupVersionResource{Group: operatorv1.GroupName, Version: operatorv1.GroupVersion.Version, Resource: "servicecatalogcontrollermanagers"},
-	)
-
+	v1helpers.EnsureOperatorConfigExists(dynamicClient, v311_00_assets.MustAsset("v3.11.0/openshift-svcat-controller-manager/operator-config.yaml"), schema.GroupVersionResource{Group: operatorv1.GroupName, Version: operatorv1.GroupVersion.Version, Resource: "servicecatalogcontrollermanagers"})
 	operatorConfigInformers := operatorinformers.NewSharedInformerFactory(operatorclient, 10*time.Minute)
 	kubeInformersForServiceCatalogControllerManagerNamespace := informers.NewSharedInformerFactoryWithOptions(kubeClient, 10*time.Minute, informers.WithNamespace(targetNamespaceName))
 	kubeInformersForOperatorNamespace := informers.NewSharedInformerFactoryWithOptions(kubeClient, 10*time.Minute, informers.WithNamespace(util.OperatorNamespace))
 	configInformers := configinformers.NewSharedInformerFactory(configClient, 10*time.Minute)
-
-	operator := NewServiceCatalogControllerManagerOperator(
-		os.Getenv("IMAGE"),
-		operatorConfigInformers.Operator().V1().ServiceCatalogControllerManagers(),
-		kubeInformersForServiceCatalogControllerManagerNamespace,
-		operatorclient.OperatorV1(),
-		kubeClient,
-		dynamicClient,
-		ctx.EventRecorder,
-	)
-
-	opClient := &operatorClient{
-		informers: operatorConfigInformers,
-		client:    operatorclient.OperatorV1(),
-	}
-
-	versionGetter := &versionGetter{
-		servicecatalogControllerManagers: operatorclient.OperatorV1().ServiceCatalogControllerManagers(),
-		version: os.Getenv("RELEASE_VERSION"),
-	}
-	clusterOperatorStatus := status.NewClusterOperatorStatusController(
-		"service-catalog-controller-manager",
-		[]configv1.ObjectReference{
-			{Group: "operator.openshift.io", Resource: "servicecatalogcontrollermanagers", Name: "cluster"},
-			{Resource: "namespaces", Name: util.OperatorNamespace},
-			{Resource: "namespaces", Name: util.TargetNamespace},
-		},
-		configClient.ConfigV1(),
-		configInformers.Config().V1().ClusterOperators(),
-		opClient,
-		versionGetter,
-		ctx.EventRecorder,
-	)
-
+	operator := NewServiceCatalogControllerManagerOperator(os.Getenv("IMAGE"), operatorConfigInformers.Operator().V1().ServiceCatalogControllerManagers(), kubeInformersForServiceCatalogControllerManagerNamespace, operatorclient.OperatorV1(), kubeClient, dynamicClient, ctx.EventRecorder)
+	opClient := &operatorClient{informers: operatorConfigInformers, client: operatorclient.OperatorV1()}
+	versionGetter := &versionGetter{servicecatalogControllerManagers: operatorclient.OperatorV1().ServiceCatalogControllerManagers(), version: os.Getenv("RELEASE_VERSION")}
+	clusterOperatorStatus := status.NewClusterOperatorStatusController("service-catalog-controller-manager", []configv1.ObjectReference{{Group: "operator.openshift.io", Resource: "servicecatalogcontrollermanagers", Name: "cluster"}, {Resource: "namespaces", Name: util.OperatorNamespace}, {Resource: "namespaces", Name: util.TargetNamespace}}, configClient.ConfigV1(), configInformers.Config().V1().ClusterOperators(), opClient, versionGetter, ctx.EventRecorder)
 	operatorConfigInformers.Start(ctx.Done())
 	kubeInformersForServiceCatalogControllerManagerNamespace.Start(ctx.Done())
 	kubeInformersForOperatorNamespace.Start(ctx.Done())
 	configInformers.Start(ctx.Done())
-
 	go operator.Run(1, ctx.Done())
 	go clusterOperatorStatus.Run(1, ctx.Done())
-
 	<-ctx.Done()
 	return fmt.Errorf("stopped")
 }
 
 type versionGetter struct {
-	servicecatalogControllerManagers operatorclientv1.ServiceCatalogControllerManagerInterface
-	version                          string
+	servicecatalogControllerManagers	operatorclientv1.ServiceCatalogControllerManagerInterface
+	version					string
 }
 
 func (v *versionGetter) SetVersion(operandName, version string) {
-	// this versionGetter impl always gets the current version dynamically from operator config object status.
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 }
-
 func (v *versionGetter) GetVersions() map[string]string {
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	co, err := v.servicecatalogControllerManagers.Get("cluster", metav1.GetOptions{})
 	if co == nil || err != nil {
 		return map[string]string{}
@@ -121,8 +82,8 @@ func (v *versionGetter) GetVersions() map[string]string {
 	}
 	return map[string]string{}
 }
-
 func (v *versionGetter) VersionChangedChannel() <-chan struct{} {
-	// this versionGetter never notifies of a version change, getVersion always returns the new version.
+	_logClusterCodePath()
+	defer _logClusterCodePath()
 	return make(chan struct{})
 }
